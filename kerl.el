@@ -116,13 +116,16 @@ Optionally append the directory DIR."
                (split-string (kerl--call-process "list" "installations") "\n" t)))
 
 (defun kerl--completing-read (prompt options)
+  "Call the interactive completion function using PROMPT and OPTIONS and return the result trimmed."
   (let ((selected (funcall kerl-interactive-completion-function prompt options)))
     (kerl--string-trim selected)))
 
 (defun kerl--string-trim (string)
+  "Trim unwanted whitespace from the ends of STRING."
   (replace-regexp-in-string "^\\s-*\\|\\s-*$" "" string))
 
 (defun kerl--call-process (&rest args)
+  "Call the kerl process with arguments ARGS and return the output."
   (with-temp-buffer
     (let* ((success (apply 'call-process kerl-executable nil t nil
                            (delete nil args)))
