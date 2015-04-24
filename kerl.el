@@ -3,6 +3,7 @@
 ;; Copyright (c) 2015 Correl Roush
 
 ;; Author: Correl Roush <correl@gmail.com>
+;; URL: http://github.com/correl/kerl.el/
 ;; Version: 0.1
 ;; Created: 2015-04-21
 ;; Keywords: tools
